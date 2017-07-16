@@ -10,3 +10,4 @@ from classes.application import Application
 ROOT = Tk()
 Application(ROOT)
 ROOT.mainloop()
+
