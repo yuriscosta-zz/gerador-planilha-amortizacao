@@ -1,7 +1,6 @@
 # coding: utf-8
 
 from tkinter import *
-from classes.info import Info
 
 class Application:
     """ Classe que renderiza toda a interface gráfica da aplicação """
@@ -11,10 +10,10 @@ class Application:
         self.fonte = ("Arial", "12")
 
         self.container_titulo(self.root, "Preencha os dados abaixo")
-        Info.montante = self.container_montante()
-        Info.taxa_juros = self.container_tx_juros()
-        Info.parcelas = self.container_qtd_parcelas()
-        Info.amortizacao = self.container_tipos_amort()
+        self.montante = self.container_montante()
+        self.juros = self.container_tx_juros()
+        self.parcelas = self.container_qtd_parcelas()
+        self.amortizacao = self.container_tipos_amort()
         self.container_botoes()
 
         self.root.pack()
@@ -125,15 +124,13 @@ class Application:
                             font=self.fonte,
                             width=5,
                             padx=10,
-                            command=self.show(Info.montante,
-                                              Info.taxa_juros,
-                                              Info.parcelas,
-                                              Info.amortizacao))
+                            command=lambda: self.show(self.montante,
+                                                      self.juros,
+                                                      self.parcelas,
+                                                      self.amortizacao))
         self.gerar.pack(side=LEFT)
 
     def show(self, a, b, c, d):
-        print(a)
-        print(b)
-        print(c)
-        print(d)
+        """ Método de teste para exibir os valores inseridos no formulário """
+        print("{0}\n{1}\n{2}\n{3}".format(a, b, c, d))
     

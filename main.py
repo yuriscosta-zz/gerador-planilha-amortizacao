@@ -5,9 +5,8 @@
 """
 
 from tkinter import *
-from classes.application import Application
+from view.application import Application
 
 ROOT = Tk()
 Application(ROOT)
 ROOT.mainloop()
-
