@@ -10,10 +10,10 @@ class Application:
         self.fonte = ("Arial", "12")
 
         self.container_titulo(self.root, "Preencha os dados abaixo")
-        self.montante = self.container_montante()
-        self.juros = self.container_tx_juros()
-        self.parcelas = self.container_qtd_parcelas()
-        self.amortizacao = self.container_tipos_amort()
+        self.container_montante()
+        self.container_tx_juros()
+        self.container_qtd_parcelas()
+        self.container_tipos_amort()
         self.container_botoes()
 
         self.root.pack()
@@ -41,11 +41,10 @@ class Application:
                             font=self.fonte)
         self.rotulo.pack(side=LEFT)
 
-        self.valor = Entry(self.montante,
-                           font=self.fonte)
-        self.valor.pack(side=RIGHT)
+        self.campo_montante = Entry(self.montante,
+                                    font=self.fonte)
+        self.campo_montante.pack(side=RIGHT)
 
-        return self.valor.get()
 
     def container_tx_juros(self):
         """ Método para criar o container e widgets das taxas de juros """
@@ -59,11 +58,10 @@ class Application:
                             font=self.fonte)
         self.rotulo.pack(side=LEFT)
 
-        self.valor = Entry(self.tx_juros,
-                           font=self.fonte)
-        self.valor.pack(side=RIGHT)
+        self.campo_juros = Entry(self.tx_juros,
+                                 font=self.fonte)
+        self.campo_juros.pack(side=RIGHT)
 
-        return self.valor.get()
 
     def container_qtd_parcelas(self):
         """ Método para criar o container e widgets da qtd. de parcelas """
@@ -77,11 +75,10 @@ class Application:
                             font=self.fonte)
         self.rotulo.pack(side=LEFT)
 
-        self.valor = Entry(self.qtd_parcelas,
-                           font=self.fonte)
-        self.valor.pack(side=RIGHT)
+        self.campo_parcelas = Entry(self.qtd_parcelas,
+                                    font=self.fonte)
+        self.campo_parcelas.pack(side=RIGHT)
 
-        return self.valor.get()
 
     def container_tipos_amort(self):
         """ Método para criar o container e widgets para selecionar o tipo de amortização """
@@ -124,13 +121,12 @@ class Application:
                             font=self.fonte,
                             width=5,
                             padx=10,
-                            command=lambda: self.show(self.montante,
-                                                      self.juros,
-                                                      self.parcelas,
-                                                      self.amortizacao))
+                            command=lambda: self.show())
         self.gerar.pack(side=LEFT)
 
-    def show(self, a, b, c, d):
+    def show(self):
         """ Método de teste para exibir os valores inseridos no formulário """
-        print("{0}\n{1}\n{2}\n{3}".format(a, b, c, d))
-    
+        print("{0}\n{1}\n{2}\n{3}".format(self.campo_montante.get(),
+                                          self.campo_juros.get(),
+                                          self.campo_parcelas.get(),
+                                          self.lista.curselection()))
