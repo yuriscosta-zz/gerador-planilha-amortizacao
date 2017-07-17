@@ -100,7 +100,6 @@ class Application:
             self.lista.insert(END, tipo)
         self.lista.pack()
 
-        return self.lista.curselection()
 
     def container_botoes(self):
         """ Método para criar o container e widgets do botão de sair e de gerar planilha"""
