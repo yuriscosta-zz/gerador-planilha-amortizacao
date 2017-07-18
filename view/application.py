@@ -2,6 +2,7 @@
 
 from tkinter import *
 from tkinter import filedialog
+from controller.controller import Controller
 
 class Application:
     """ Classe que renderiza toda a interface gráfica da aplicação """
@@ -14,8 +15,8 @@ class Application:
         self.container_montante()
         self.container_tx_juros()
         self.container_qtd_parcelas()
-        self.container_tipos_amort()
         self.container_nome_arquivo()
+        self.container_tipos_amort()
         self.container_botoes()
 
         self.root.pack()
@@ -118,7 +119,7 @@ class Application:
         self.nome_arquivo = Entry(self.arquivo,
                                   font=self.fonte)
         self.nome_arquivo.pack(side=RIGHT)
-        
+
         self.arquivo.pack()
 
     def container_diretorio(self):
@@ -151,17 +152,27 @@ class Application:
                             font=self.fonte,
                             width=5,
                             padx=10,
-                            command=lambda: self.show(self.valor_montante.get(),
-                                                      self.valor_juros.get(),
-                                                      self.valor_parcelas.get(),
-                                                      self.lista.get(self.lista.curselection()),
-                                                      self.nome_arquivo.get()))
+                            command=lambda: self.gerar_planilha(self.valor_montante.get(),
+                                                                self.valor_juros.get(),
+                                                                self.valor_parcelas.get(),
+                                                                self.lista.get(self.lista.curselection()),
+                                                                self.nome_arquivo.get()))
         self.gerar.pack(side=LEFT)
 
         self.botoes.pack()
 
-    def show(self, a, b, c, d, e):
-        """ Método de teste para exibir os valores inseridos no formulário """
-        self.container_diretorio()
-        print("{0}\n{1}\n{2}\n{3}\n{4}\n{5}".format(a, b, c, d, e, self.local))
+    def gerar_planilha(self, a, b, c, d, e):
+        """ Método para enviar os valores para o controlador """
 
+        self.container_diretorio()
+
+        valores = {"montante":a,
+                   "juros":b,
+                   "parcelas":c,
+                   "amortizacao":d,
+                   "arquivo":e,
+                   "diretorio":self.local}
+
+        Controller(valores)
+
+        self.container_titulo(self.root, "Salvo com sucesso!")
