@@ -7,6 +7,8 @@ class Info:
         self.taxa_juros = None
         self.parcelas = None
         self.amortizacao = None
+        self.nome_arquivo = None
+        self.diretorio = None
 
     @property
     def montante(self):
@@ -27,3 +29,13 @@ class Info:
     def amortizacao(self):
         """ Tipo de amortização utilizada (SAC, Price ou Americano) """
         return self.amortizacao
+
+    @property
+    def nome_arquivo(self):
+        """ Nome do arquivo """
+        return self.nome_arquivo
+
+    @property
+    def diretorio(self):
+        """ Local para armazenar o arquivo """
+        return self.diretorio
