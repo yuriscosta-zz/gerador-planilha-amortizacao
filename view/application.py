@@ -8,7 +8,7 @@ class Application:
     """ Classe que renderiza toda a interface gráfica da aplicação """
     def __init__(self, master=None):
         self.root = Frame(master)
-
+        
         self.fonte = ("Arial", "12")
 
         self.container_titulo(self.root, "Preencha os dados abaixo")

@@ -22,6 +22,9 @@ $ cd venv && source bin/activate
 # Volte para o diretório inicial do repositório
 $ cd ..
 
+# Instale as dependências
+$ pip install -r requirements.txt
+
 # Execute o arquivo do sistema
 $ python main.py
 ```
