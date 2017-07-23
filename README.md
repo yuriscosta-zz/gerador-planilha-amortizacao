@@ -3,33 +3,36 @@ Software para geração de planilhas de amortização relativas a empréstimos f
 
 ## Instalação
 Para que o sistema seja executado, deverás ter a versão 3.5 do Python. Caso esteja instalado, abra o seu terminal e siga os passos abaixo:
+
+> Note que a rotina está considerando o uso de um Ubuntu LTS atualizado.
+
 ```bash
 # Clone este repositório
-$ git clone https://github.com/yuriscosta/planilha_amortizacao.git
+git clone https://github.com/yuriscosta/planilha_amortizacao.git
 
 # Entre no repositório
-$ cd planilha_amortizacao
+cd planilha_amortizacao
 
 # Instale o virtualenv
-$ pip install virtualenv
+pip install virtualenv
 
 # Crie um ambiente virtual
-$ virtualenv venv
+virtualenv venv
 
 # Ative o ambiente virtual
-$ cd venv && source bin/activate
+cd venv && source bin/activate
 
 # Volte para o diretório inicial do repositório
-$ cd ..
+cd ..
 
 # Instale as dependências
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 
 # Execute o arquivo do sistema
-$ python main.py
+python main.py
 ```
 
-# Como usar
+## Como usar
 ![Tela inicial](http://i.imgur.com/TlvXTfE.png) <br>
 Ao executar o sistema, a tela inicial do mesmo será aberta. Ela possui um formulário onde você preencherá os dados para que a sua planilha seja gerada.
 
