@@ -11,14 +11,6 @@ class Controller:
         self.valores = valores
         self.verificar_amortizacao()
 
-    def show(self):
-        print("{0}\n{1}\n{2}\n{3}\n{4}\n{5}".format(type(self.valores["montante"]),
-                                                    type(self.valores["juros"]),
-                                                    type(self.valores["parcelas"]),
-                                                    type(self.valores["amortizacao"]),
-                                                    type(self.valores["arquivo"]),
-                                                    type(self.valores["diretorio"])))
-
     def verificar_amortizacao(self):
         """ 
             Método para verificar o tipo de amortização e passar os dados 

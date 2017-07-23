@@ -11,7 +11,6 @@ class Price:
         self.amortizacao = valores["amortizacao"]
         self.arquivo = valores["arquivo"]
         self.diretorio = valores["diretorio"]
-
         self.gerar_tabela()
 
     def gerar_tabela(self):
@@ -45,6 +44,7 @@ class Price:
                 self.lista_saldo_devedor.append(self.montante)
 
     def get_valores(self):
+        """ Método para retornar os valores dentro de um dicionário """
         valores = {"tipo": "Price",
                    "periodos": self.lista_periodos,
                    "prestacoes": self.lista_prestacao,

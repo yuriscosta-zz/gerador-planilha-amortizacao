@@ -11,7 +11,6 @@ class SAC:
         self.amortizacao = valores["amortizacao"]
         self.arquivo = valores["arquivo"]
         self.diretorio = valores["diretorio"]
-
         self.gerar_valores()
 
     def gerar_valores(self):
@@ -42,19 +41,10 @@ class SAC:
                 self.lista_amortizacao.append(self.amortizacao)
                 self.lista_saldo_devedor.append(self.montante)
 
-    def show(self):
-        for i in range(self.parcelas+1):
-            print("{0}\t{1}\t{2}\t{3}\t{4}".format(self.lista_periodos[i],
-                                                   self.lista_prestacao[i],
-                                                   self.lista_juros[i],
-                                                   self.lista_amortizacao[i],
-                                                   self.lista_saldo_devedor[i]))
 
-        print("Total: {0}\t{1}\t{2}".format(self.total_prestacao,
-                                            self.total_juros,
-                                            self.total_amortizacao))
 
     def get_valores(self):
+        """ Método para retornar os valores dentro de um dicionário """
         valores = {"tipo": "SAC",
                    "periodos": self.lista_periodos,
                    "prestacoes": self.lista_prestacao,
@@ -67,3 +57,5 @@ class SAC:
                    "arquivo": self.arquivo,
                    "diretorio": self.diretorio}
         return valores
+        
+   

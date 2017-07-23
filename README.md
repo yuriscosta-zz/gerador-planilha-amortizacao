@@ -4,6 +4,9 @@ Software para geração de planilhas de amortização relativas a empréstimos f
 ## Instalação
 Para que o sistema seja executado, deverás ter a versão 3.5 do Python. Caso esteja instalado, abra o seu terminal e siga os passos abaixo:
 ```bash
+# Baixe a biblioteca Tkinter
+$ apt install python3-tk
+
 # Clone este repositório
 $ git clone https://github.com/yuriscosta/planilha_amortizacao.git
 

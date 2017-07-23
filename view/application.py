@@ -152,18 +152,17 @@ class Application:
                             font=self.fonte,
                             width=5,
                             padx=10,
-                            command=lambda: self.gerar_planilha(self.valor_montante.get(),
-                                                                self.valor_juros.get(),
-                                                                self.valor_parcelas.get(),
-                                                                self.lista.get(self.lista.curselection()),
-                                                                self.nome_arquivo.get()))
+                            command=lambda: self.passar_dados(self.valor_montante.get(),
+                                                              self.valor_juros.get(),
+                                                              self.valor_parcelas.get(),
+                                                              self.lista.get(self.lista.curselection()),
+                                                              self.nome_arquivo.get()))
         self.gerar.pack(side=LEFT)
 
         self.botoes.pack()
 
-    def gerar_planilha(self, a, b, c, d, e):
+    def passar_dados(self, a, b, c, d, e):
         """ Método para enviar os valores para o controlador """
-
         self.container_diretorio()
 
         valores = {"montante":a,
