@@ -19,14 +19,8 @@ pip install virtualenv
 # Crie um ambiente virtual
 virtualenv venv
 
-# Entre na pasta do ambiente virtual
-cd venv
-
 # Ative o ambiente virtual
-source bin/activate
-
-# Volte para o diretório inicial do repositório
-cd ..
+source venv/bin/activate
 
 # Instale as dependências
 pip install -r requirements.txt
